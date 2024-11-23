@@ -1,0 +1,317 @@
+%! Author = Jason Cameron
+%! Date = 2024-01-28
+% resume.tex
+% vim:set ft=tex spell:
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+% \usepackage{fancyhdr}
+% \usepackage[english]{babel}
+% \usepackage{tabularx}
+\input{glyphtounicode}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+
+
+%----------FONT OPTIONS----------
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+\usepackage[default]{sourcesanspro}
+
+% \usepackage[letterpaper,margin=0.8in]{geometry}
+\usepackage[T1]{fontenc}
+
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+% \pagestyle{fancy}
+% \fancyhf{} % clear all header and footer fields
+% \fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+% \usepackage[bottom=0.5in,top=0.4in,left=0.4in,right=0.4in]{geometry}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.7in}
+% \addtolength{\}{}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% Social Icons
+\usepackage{fontawesome5}
+
+\usepackage{supertabular}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.42\textwidth}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+    \item\small{
+            {#1 \vspace{-2pt}}
+    }
+}
+
+\newcommand{\resumeSubheading}[4]{%
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & #2 \\
+    \ifx & #3 &%
+    \else
+        \textit{\small#3} &
+    \fi
+    \ifx & #4 &%
+    \else
+        \textit{\small #4} \\
+    \fi
+    \end{tabular*}\vspace{-7pt}%
+
+}
+\newcommand{\resumeTwoJobHeading}[6]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & #2 \\
+    \textbf{#3} & #4
+    \ifx & #5 &%
+    \else
+        \textit{\small#5} &
+    \fi
+    \ifx & #6 &%
+    \else
+        \textit{\small #6} \\
+    \fi
+    \end{tabular*}\vspace{-7pt}%
+}
+
+\newcommand{\shortResumeSubheading}[2]{%
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}%
+}
+
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & #2 \\
+    \end{tabular*}
+    \vspace{-7pt}
+}
+\newcommand{\resumeProjectHeadingWithDescription}[4]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#2 $-$ \githubUrl{#1} & #3 \\
+    \end{tabular*}
+    \vspace{-7pt}
+    \small{#4}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\utextbf}[1]{\underline{\textbf{#1}}}
+
+\makeatletter
+\newcommand{\githubUrl}[1]{%
+\href{#1}{\faGithub}%
+}
+\makeatother
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+\textbf{\Huge  Jason Cameron} \\ \vspace{1pt}
+\underline{\href{mailto:contact@jasoncameron.dev}{\raisebox{-0.05\height}{\faEnvelope} contact@jasoncameron.dev}} \,$|$\,
+\underline{\href{https://jasoncameron.dev}{\raisebox{-0.05\height}{\faDesktop} jasoncameron.dev}} \,$|$\,
+\underline{\href{https://github.com/jasonlovesdoggo}{\raisebox{-0.05\height}{\faGithub} JasonLovesDoggo}} \,$|$\:
+\underline{\href{https://www.linkedin.com/in/jsoncameron/}{\raisebox{-0.05\height}{\faLinkedin} jsoncameron}}
+% If I want to add my phone num, I can always remove github.com/ and linkdin.com/in in text
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experiences}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Research Assistant}{Jun. 2024 - Present}
+{\href{https://lassonde.yorku.ca/}{\textit{Lassonde School of Engineering, York University}}}{North York, ON}
+
+\resumeItemListStart
+
+\resumeItem{Research Assistant to Dr. Alvine Boaye Belle \textbf{|} Analyzed AI/ML fairness, reducing model bias \textbf{~15\%}. Researched and proposed solutions to access barriers in tech, boosting underrepresented participation in program by \textbf{13\%}.}
+
+\resumeItemListEnd
+
+% Metropolis
+
+\resumeSubheading
+{Project Manager}{Sep. 2022 - Present}
+% {Backend Developer}{Sep. 2022 - Jun. 2023}
+{\href{https://github.com/wlmac/}{\textit{Project Metropolis}}}{Toronto, ON}
+
+\resumeItemListStart
+\resumeItem{Optimized Docker build processes reducing  average build time from \textbf{140s} to \textbf{80s} by caching reused layers}
+\resumeItem{Automated API documentation generation conforming to OpenAPI 3.1 standards, saving \textbf{5} hours monthly per developer}
+\resumeItem{
+Streamlined deployment via centralized bash scripts, improving system agility and reducing average downtime by \textbf{12\%}}
+
+\resumeItem{
+Established REST API filters, eliminating wasted API calls by \textbf{\char`\~30\%} and decreasing server load by \textbf{3\%} during peak usage}
+\resumeItem{Designed and implemented polymorphic comments, likes, view counts, and saves, increasing user engagement by \textbf{300\%}}
+\resumeItemListEnd
+
+
+% Hackathons Canada
+% MCPT
+
+\resumeSubheading
+{Computer Science Tutor}{Dec. 2023 - Present}{}{}
+\vspace{-14px}
+% {\textit{Mackenzie Computer Programming Team}}{Toronto, ON}
+\resumeItemListStart
+% \resumeItem{Gave one-on-one and group lessons on Python \& basic web development to students aged 7 to 16
+\resumeItem{Instructed students aged 7-16 in Scratch, Python and basic web development through one-on-one and  {\null\hfill\textit{\small \small Toronto, ON}} \\
+group lessons. Utilized a blend of interactive exercises and project-based learning to foster understanding}
+% \resumeItem{Contest detail from \textbf{8s} to \textbf{0.097s} which is over 80x faster}
+% \resumeItem{Automated API documentation generation conforming to OpenAPI 3.1 standards, saving \textbf{5} hours monthly per developer}
+% \resumeItem{Optimized database queries by over \textbf{100x} reducing avg time from \textbf{8s} to just \textbf{0.078s}}
+
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+%----------- Projects-----------
+
+% Next up is removing points from PhysioQuest and last point is reddit bot.
+
+\section{Projects \texorpdfstring{\hfill{\normalsize\normalfont\href{https://jasoncameron.dev/\#/projects}{jasoncameron.dev/\#/projects}}}{jasoncameron.dev/\#/projects}}
+\resumeSubHeadingListStart
+
+\resumeProjectHeadingWithDescription
+{https://github.com/elebumm/RedditVideoMakerBot}
+{\underline{\href{https://github.com/elebumm/RedditVideoMakerBot}{\textbf{RedditVideoMakerBot}}} $|$ \emph{Python, Reddit, FFmpeg, AWS Polly, Playwright, Web Scraping}}{May 2022 - Present}
+{Automated tool for transforming Reddit posts into videos using code, streamlining traditional editing workflows}
+\resumeItemListStart
+\resumeItem{Created a simplified configuration GUI, growing the bot to \textbf{6,500+} stars on GitHub and \textbf{250,000+} downloads}
+\resumeItem{Enhanced bot's Text-to-Speech (TTS) functionality by reverse engineering the TikTok TTS API, resulting in a \textbf{30\%} reduction in processing time and a \textbf{25\%} increase in speech clarity}
+\resumeItem{Ensured reliable operation of the bot across \textbf{10,000+} machines and all major operating systems despite API changes, rate limiting, and copyright issues}
+\resumeItemListEnd
+
+\resumeProjectHeadingWithDescription
+{https://github.com/JasonLovesDoggo/abacus}
+{\underline{\textbf{\href{https://abacus.jasoncameron.dev}{Abacus}}} $|$ \emph{Golang, Gin, Valkey, Docker, Jsoniter, SSE, JSONP, Linux System Administration }}{Apr. 2024 - Present}
+{High-performing and lightweight API simplifying numeric tracking and analytics, eliminating custom backend infrastructure}
+\resumeItemListStart
+\resumeItem{Scaled the site up to \textbf{1.5 million+} requests weekly while maintaining a \utextbf{\href{https://www.apianalytics.dev/monitoring/b92525b5012d440a93cbdf39e6c34ed8}{100\% uptime}} and \textbf{46.0ms} median response time}
+\resumeItem{Reduced infrastructure costs by \textbf{35\%} and increased speeds by \textbf{22\%} utilizing pipelining and optimizing Docker networks}
+\resumeItemListEnd
+
+\resumeProjectHeadingWithDescription
+{https://github.com/JasonLovesDoggo/foodle}
+{\underline{\href{https://jasoncameron.dev/foodle}{\textbf{Foodle}}} $|$ \emph{Typescript, Svelte, CSS, Python, Flask, Cloudflare, Google Analytics}} {Aug. 2022 - Present}
+{A food-themed twist of Wordle with an additional set of modes and features}
+\resumeItemListStart
+\resumeItem{Developed and deployed a high-performance Wordle-inspired game using Svelte, Cloudflare, and GitHub Pages. Grew it to \textbf{680,000+} unique visitors and \textbf{5,700,000+} page views via user-driven improvements}
+% \resumeItem{Developed, maintained, deployed, and hosted the site using Svelte, Cloudflare, and GitHub Pages}
+\resumeItemListEnd
+
+\resumeProjectHeadingWithDescription
+{https://github.com/mcpt/ctf}
+{\underline{\textbf{\href{https://ctf.mcpt.ca}{mCTF}}} $|$ \emph{Python, Django, K8s, Docker, Valkey, PostgreSQL, Nebula, NixOS}}{Jan. 2024 - Present}
+{A Reusable Jeopardy-style CTF platform written using Django and Kubernetes}
+\resumeItemListStart
+\resumeItem{Identified and rewrote critical SQL query reducing time to execute by over \textbf{80x} to \textbf{97ms} by leveraging precalculated database tables, leading to an over \textbf{50x} reduction in avg request time and an overall \textbf{60\%} increase in user satisfaction}
+\resumeItemListEnd
+
+\resumeProjectHeadingWithDescription
+{https://github.com/wlmac/scavenger}
+{\underline{\href{https://github.com/wlmac/scavenger}{\textbf{Scavenger Hunt }}} $|$  \emph{Python, Django, CSS, JS, PKCE2, OAuth 2.0}}{Nov 2022-Present}{}
+\resumeItemListStart
+\resumeItem{Developed a Django-based scavenger hunt platform with anti-cheat/teaming systems and support for multiple concurrent hunts to ensure fair and strategic gameplay}
+\resumeItemListEnd
+
+% \resumeProjectHeadingWithDescription
+% {https://github.com/JasonLovesDoggo/ScreenTimeShowdown}
+% {\underline{\textbf{\href{https://devpost.com/software/screentime-showdown}{Screentime Showdown - Best Financial Hack At} \href{https://hackthevalley.io/}{HTV 8}}} $|$ \emph{Express, React, OAuth 2.0, Meta, Paybilt, Cohere}}{Oct. 2023}
+% {Helping people quit social media with the help of friendly competition and some monetary gain}
+% \resumeItemListStart
+% \resumeItem{Integrated Meta's OAuth 2.0 and Webhook API for real-time user activity detection across all Meta platforms on all devices}
+% \resumeItemListEnd
+
+% \resumeProjectHeadingWithDescription
+% {https://github.com/JasonLovesDoggo/jamhacks}
+% {\underline{\textbf{\href{https://devpost.com/software/physioquest}{PhysioQuest - Best Use Of MongoDB At} \href{https://www.jamhacks.ca/}{JAMHacks 7}}} $|$ \emph{Python, Django, HTML, JS, CSS, OpenCV, MongoDB}}{Jun. 2023}
+% {Gamifying physiotherapy with AI to encourage consistency and accuracy when completing exercises}
+% \resumeItemListStart
+% \resumeItem{Designed and implemented the backend API and database models using Django and Django Rest Framework}
+% \resumeItem{Integrated our CV model to the end user’s webcam using Django channels, enabling compatibility with devices globally}
+% \resumeItemListEnd
+
+
+\resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Formal Education}
+\resumeSubHeadingListStart
+\shortResumeSubheading
+{William Lyon Mackenzie Collegiate Institute - Toronto, Ontario}{}
+% {Sep. 2022- Jun. 2026}
+\resumeItemListStart
+\resumeItem{\textbf{Extracurriculars: }Student Council, \href{https://maclyonsden.com}{School Website} (Project Manager), \href{https://mcpt.ca}{Competitive Programming Club}{ (\emph{System Administrator})}, Engineering Club (\emph{Tech Lead}), School Newspaper (\emph{Photographer}), A/V Team (\emph{Crew Member / Club Liaison})}
+% \href{https://flounder.news}{School Satirical Newspaper} (\emph{Web Developer}), Robotics Club (\emph{Member})}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+\small{
+\textbf{Languages}{: Python, Golang, Java, JavaScript/Typescript, Bash, Fish, Nim,  HTML, CSS/SCSS} \\
+\textbf{DevOps Tools}{: Linux, Caddy, Nginx, traefik, Docker (Swarm, Compose, BuildX), Cloudflare, WireGuard, GitHub Actions} \\
+\textbf{Tools/Frameworks}{: Django, FastAPI, Flask, React, Svelte, Astro, Gin, Celery, Postman, Tailscale, Git} \\
+\textbf{Databases}{: PostgreSQL, SQLite, RocksDB, Valkey, Redis, MongoDB} \\
+\textbf{Productivity and Design Tools}{: Miro, Notion, Microsoft Suite, Canva, Photoshop, LaTeX} \\
+}
+\end{document}

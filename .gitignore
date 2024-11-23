@@ -39,3 +39,4 @@ public/resume.tex
 .github/workflows/sitemap.yml
 .github/workflows/publish.yml
 src\Assets\1b026b52-22a3-4635-849d-d7eda20bec0c.png
+.node_modules
