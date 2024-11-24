@@ -251,6 +251,10 @@ button:focus {
     display: inline-block;
 }
 
+.intro-heading {
+    font-size: 2.6em;
+}
+
 @keyframes wave-animation {
     0% {
         transform: rotate(0deg);
