@@ -4,6 +4,9 @@ import homeLogo from "../../Assets/home-main.webp";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import Home320w from "../../Assets/home-main-320w.webp";
+import Home480w from "../../Assets/home-main-480w.webp";
+
 
 function Brackets(props) {
   const [code, setCodeOut] = useState(["<", "/>"]);
@@ -89,10 +92,7 @@ function Home() {
             
             <Col md={5} style={{ paddingBottom: 20 }}>
             <img
-                srcSet={`
-                  src/Assets/home-main-320w.webp 320w,
-                  src/Assets/home-main-480w.webp 480w
-                `}
+                srcSet={Home320w, Home480w}
                 sizes="(max-width: 320px) 320px, 480px"
                 src={homeLogo}
                 alt="home pic"
