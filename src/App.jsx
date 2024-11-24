@@ -31,10 +31,10 @@ function App() {
 
   return (
     <Router>
-      <Preloader load={load} />
       <Helmet>
-               <link rel="preload" as="image" href={homeLogo} />
+               <link rel="preload" fetchPriority="high" as="image" href={homeLogo} type="image/webp" />
       </Helmet>
+      <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <ColorContext.Provider value={{ color, setColor }}>
           <DynamicThemeProvider>

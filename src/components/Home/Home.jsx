@@ -5,6 +5,7 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { ImGoogle2 } from "react-icons/im";
 
 
 
@@ -92,13 +93,11 @@ function Home() {
 
             
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <LazyLoadImage
+              <img
                 src={homeLogo}
                 alt="home pic"
-                effect="blur"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
-                visibleByDefault={true}
               />
             </Col>
           </Row>
