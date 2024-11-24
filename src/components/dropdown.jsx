@@ -53,7 +53,7 @@ function NavDropdown() {
                 <Dropdown.Item
                     title="League of Legends Dynamic Banner Creator"
                     className="dropdown-item"
-                    href="https://lolbannercreator.ai-krieger.de/"
+                    href="https://lolbanner.ai-krieger.de/"
                     target="_blank"
                 >
                     <SiSpringCreators style={{marginBottom: "2px"}}/> LOL Banner Creator
