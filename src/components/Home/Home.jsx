@@ -5,6 +5,8 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Helmet } from "react-helmet";
+
 
 
 function Brackets(props) {
