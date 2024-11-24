@@ -4,6 +4,8 @@ import homeLogo from "../../Assets/home-main.webp";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 function Brackets(props) {
   const [code, setCodeOut] = useState(["<", "/>"]);
@@ -87,9 +89,10 @@ function Home() {
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
+              <LazyLoadImage
                 src={homeLogo}
                 alt="home pic"
+                effect="blur"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
               />
