@@ -93,12 +93,16 @@ function Home() {
 
             
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
+            <img
+                srcSet={`
+                  src/Assets/home-main-320w.webp 320w,
+                  src/Assets/home-main-480w.webp 480w
+                `}
+                sizes="(max-width: 320px) 320px, 480px"
                 src={homeLogo}
                 alt="home pic"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
-                loading="eager"
               />
             </Col>
           </Row>
