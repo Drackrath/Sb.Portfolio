@@ -13,8 +13,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from "./components/404s/404";
 import DynamicThemeProvider from "./components/Theme";
-import { Helmet } from "react-helmet";
-import homeLogo from "./Assets/home-main.webp";
 
 export const ColorContext = createContext(null);
 

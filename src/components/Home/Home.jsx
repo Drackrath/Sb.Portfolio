@@ -4,11 +4,6 @@ import homeLogo from "../../Assets/home-main.webp";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { ImGoogle2 } from "react-icons/im";
-
-
-
 
 function Brackets(props) {
   const [code, setCodeOut] = useState(["<", "/>"]);
