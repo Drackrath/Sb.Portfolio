@@ -88,6 +88,9 @@ function Home() {
               </div>
             </Col>
 
+            <Helmet>
+               <link rel="preload" as="image" href={homeLogo} />
+            </Helmet>
             <Col md={5} style={{ paddingBottom: 20 }}>
               <LazyLoadImage
                 src={homeLogo}
@@ -95,6 +98,7 @@ function Home() {
                 effect="blur"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
+                visibleByDefault={true}
               />
             </Col>
           </Row>
