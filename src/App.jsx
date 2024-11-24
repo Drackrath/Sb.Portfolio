@@ -28,13 +28,9 @@ function App() {
     }, 1200);
     return () => clearTimeout(timer);
   }, []);
-
+//<Preloader load={load} />
   return (
     <Router>
-      <Helmet>
-               <link rel="preload" fetchPriority="high" as="image" href={homeLogo} type="image/webp" />
-      </Helmet>
-      <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <ColorContext.Provider value={{ color, setColor }}>
           <DynamicThemeProvider>
