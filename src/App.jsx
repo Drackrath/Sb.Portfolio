@@ -13,6 +13,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from "./components/404s/404";
 import DynamicThemeProvider from "./components/Theme";
+import { Helmet } from "react-helmet";
+import homeLogo from "./Assets/home-main.webp";
 
 export const ColorContext = createContext(null);
 
@@ -30,6 +32,9 @@ function App() {
   return (
     <Router>
       <Preloader load={load} />
+      <Helmet>
+               <link rel="preload" as="image" href={homeLogo} />
+      </Helmet>
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <ColorContext.Provider value={{ color, setColor }}>
           <DynamicThemeProvider>

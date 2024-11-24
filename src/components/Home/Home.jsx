@@ -5,7 +5,7 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { Helmet } from "react-helmet";
+
 
 
 
@@ -90,9 +90,7 @@ function Home() {
               </div>
             </Col>
 
-            <Helmet>
-               <link rel="preload" as="image" href={homeLogo} />
-            </Helmet>
+            
             <Col md={5} style={{ paddingBottom: 20 }}>
               <LazyLoadImage
                 src={homeLogo}
